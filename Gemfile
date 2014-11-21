@@ -6,6 +6,7 @@ gem 'rails', '4.1.7'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'devise'
+gem 'better_errors'
 gem 'font-awesome-rails'
 gem 'cancancan', '~> 1.9'
 # Use SCSS for stylesheets

@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers:{
+    registrations: 'registrations'
+  }
+
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+  end
+  resources :user, :controller => "user"
+    match 'user/:id' => 'user#destroy', :via => :delete, :as => :admin_destroy_user
+    
   get 'home/index'
 
   get 'home/about'
