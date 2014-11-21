@@ -32,7 +32,7 @@ def update
     respond_to do |format|
       if @user.update(user_params)
           sign_in @user, :bypass => true
-          format.html { redirect_to user_path, notice: 'user was successfully updated.' }
+          format.html { redirect_to root_path, notice: 'user was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: 'edit' }
