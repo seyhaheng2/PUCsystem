@@ -1,0 +1,33 @@
+	<header class="header">
+		<div class="logo" style="verticle-align:center;">
+			<%= link_to "PUC School" %>
+		</div>
+		<div class="menu">
+		<ul class="nav navbar-nav">
+			<li><%= link_to "Dashboard" %></li>
+			<li><%= link_to "Register Student" %></li>
+			<li><%= link_to "Enroll Student" %></li>
+			<li><%= link_to "Attendance" %></li>
+			<% if current_user %>
+			<li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+			<% end %>
+
+		</ul>
+			
+		</div>
+	</header>
+	<div class="container mar-t mar-t">
+		<div class="col-md-8 col-md-offset-2 text-centered" style="display:flex;">
+			<div class="col-md-3 img-circle bck" >Dashboard</div>	
+			<div class="col-md-3 img-circle bck" >Register Student</div>	
+			<div class="col-md-3 img-circle bck" >Enroll Student</div>	
+			<div class="col-md-3 img-circle bck" >Attendance</div>	
+		</div>	
+	</div>
+
+
+
+
+	<% @users.each do |user| %>
+	<li> <%= user.username %></li>
+	<% end %>
